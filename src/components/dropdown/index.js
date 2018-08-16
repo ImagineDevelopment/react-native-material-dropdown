@@ -111,7 +111,7 @@ export default class Dropdown extends PureComponent {
     rippleColor: PropTypes.string,
     rippleCentered: PropTypes.bool,
     rippleSequential: PropTypes.bool,
-    textFieldLineWdth: PropTypes.number,
+    textFieldLineWidth: PropTypes.number,
     rippleInsets: PropTypes.shape({
       top: PropTypes.number,
       right: PropTypes.number,
@@ -482,7 +482,7 @@ export default class Dropdown extends PureComponent {
       labelExtractor,
       dropdownOffset,
       renderAccessory = this.renderAccessory,
-      textFieldLineWdth = 2
+      textFieldLineWidth = 2
     } = this.props;
 
     let index = this.selectedIndex();
@@ -517,7 +517,9 @@ export default class Dropdown extends PureComponent {
           fontWeight: "bold"
         }}
         {...props}
-        lineWidth={textFieldLineWdth}
+        lineWidth={textFieldLineWidth}
+        disabledLineWidth={textFieldLineWidth}
+        activeLineWidth={textFieldLineWidth}
         value={title}
         editable={false}
         onChangeText={undefined}
